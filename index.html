@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Makes the page fit phone screens -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore the World</title>
+  <!-- Connects the CSS file -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header class="site-header">
+    <h1 class="logo">Explore the World</h1>
+    <nav class="nav">
+      <a href="#explore">Explore</a>
+      <a href="#favorites">Favorites</a>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- SEARCH SECTION -->
+    <section id="explore" class="hero">
+      <h2>Discover any country</h2>
+      <p>Search a country to see the basics, its currency, and how it compares with yours.</p>
+
+      <form id="search-form" class="search-box">
+        <label for="country-input" class="sr-only">Country name</label>
+        <input id="country-input" type="text" placeholder="Try Japan, Brazil, Egypt...">
+        <button type="submit" class="btn">Search</button>
+      </form>
+    </section>
+
+    <!-- RESULTS: JavaScript will fill this in later (Step 2) -->
+    <section id="results" class="results">
+      <article class="card">
+        <h3>Country card</h3>
+        <p>Your search result will appear here.</p>
+      </article>
+
+      <article class="card">
+        <h3>Currency converter</h3>
+        <p>The converter will appear here (Step 3).</p>
+      </article>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Built with HTML, CSS and JavaScript.</p>
+  </footer>
+
+  <!-- Connects the JavaScript file (at the end so the page loads first) -->
+  <script src="js/script.js"></script>
+</body>
+</html>

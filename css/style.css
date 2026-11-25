@@ -1,0 +1,165 @@
+/* ---------- 1. VARIABLES: change colors here and the whole site updates ---------- */
+:root {
+  --navy: #14213d;
+  --blue: #1d4ed8;
+  --ground: #f4f6fb;
+  --text-soft: #3b4763;
+  --card-bg: rgba(255, 255, 255, 0.88);
+}
+
+/* ---------- 2. BASE STYLES ---------- */
+* {
+  box-sizing: border-box; /* padding no longer makes elements wider */
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--ground);
+  color: var(--navy);
+  min-height: 100vh;
+  display: flex;            /* Flexbox: stack header, main, footer */
+  flex-direction: column;
+}
+
+/* Hides text visually but keeps it for screen readers */
+.sr-only {
+  position: absolute;
+  left: -9999px;
+}
+
+/* ---------- 3. HEADER ---------- */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 48px;
+  background: var(--navy);
+  color: white;
+}
+
+.logo {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.nav a:hover {
+  opacity: 0.7;
+}
+
+/* ---------- 4. MAIN LAYOUT ---------- */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;           /* centers the content */
+  padding: 40px 24px;
+  flex: 1;                  /* pushes the footer to the bottom */
+}
+
+.hero h2 {
+  font-size: 2.2rem;
+  margin: 0 0 12px;
+}
+
+.hero p {
+  color: var(--text-soft);
+  margin: 0 0 24px;
+}
+
+/* ---------- 5. SEARCH BOX ---------- */
+.search-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.search-box input {
+  flex: 1;
+  min-width: 220px;
+  min-height: 48px;
+  padding: 0 16px;
+  font-size: 1rem;
+  border: 1px solid #8a94ab;
+  border-radius: 8px;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.25);
+}
+
+/* ---------- 6. BUTTON ---------- */
+.btn {
+  min-height: 48px;
+  padding: 0 28px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--blue);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s, filter 0.15s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.12);
+}
+
+/* ---------- 7. RESULT CARDS (CSS Grid) ---------- */
+.results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* cards wrap on small screens */
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 2px 12px rgba(20, 33, 61, 0.08);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(20, 33, 61, 0.18);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+/* ---------- 8. FOOTER ---------- */
+.site-footer {
+  padding: 20px 48px;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+}
+
+/* ---------- 9. MOBILE ---------- */
+@media (max-width: 600px) {
+  .site-header {
+    padding: 16px 24px;
+  }
+  .hero h2 {
+    font-size: 1.7rem;
+  }
+}
